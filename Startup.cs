@@ -16,7 +16,7 @@ namespace HelloWorld
 
 	    app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello You!!.\nThis is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma");
+                await context.Response.WriteAsync("Hello World!!.\nThis is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma");
                 
             });
         }	
