@@ -4,4 +4,4 @@ COPY . /app
 
 WORKDIR /app
 
-ENTRYPOINT ["bash", "kestrel", "&"]
+ENTRYPOINT ["bash", "kestrel"]
