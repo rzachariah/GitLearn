@@ -20,10 +20,5 @@ namespace HelloWorld
                 
             });
         }
-        
-        public bool ReturnTrue()
-        {
-            return true;
-        }	
     }
 }
