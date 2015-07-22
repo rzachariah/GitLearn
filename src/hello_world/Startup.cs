@@ -11,10 +11,7 @@ namespace HelloWorld
 
         public void Configure(IApplicationBuilder app )
         {
-//            app.UseStaticFiles();
- //           app.UseWelcomePage();
-
-	    app.Run(async (context) =>
+	        app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!!.\nThis is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma");
                 
