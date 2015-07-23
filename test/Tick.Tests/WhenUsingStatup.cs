@@ -1,6 +1,6 @@
 
 using Xunit;
-using HelloWorld;
+using Tick.Utility;
 
 namespace MyFirstDnxUnitTests
 {

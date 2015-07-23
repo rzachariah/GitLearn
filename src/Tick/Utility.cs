@@ -1,4 +1,4 @@
-namespace HelloWorld
+namespace Tick.Utility
 {
 	public class TestUtility
 	{
