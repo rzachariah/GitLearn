@@ -18,5 +18,13 @@ namespace Tick.Controllers
 		{
 			return _viewRepository.GetPositionView();
 		}
+		
+		[HttpGet("{id}")]
+		public IActionResult Get(string id)
+		{
+			if(string.Equals(id, "bysecview", StringComparison.CurrentCultureIgnoreCase))
+				return new ObjectResult(_viewRepository.GetBySecView());
+			return HttpNotFound();
+		}		
 	}
 }

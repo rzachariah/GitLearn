@@ -7,7 +7,9 @@ namespace Tick.Repository
 {
 	public interface IViewRepository
 	{
-		IEnumerable<ViewResponse> GetPositionView(); 
+		IEnumerable<ViewResponse> GetPositionView();
+		
+		IEnumerable<ViewResponse> GetBySecView();  
 	}
 	
 	public class ViewRepository : IViewRepository
@@ -21,6 +23,27 @@ namespace Tick.Repository
 		}
 		
 		public IEnumerable<ViewResponse> GetPositionView()
+		{
+			var joinQuery = from position in _positionCache.GetAll()
+				join price in _priceCache.GetAll() on position.Symbol equals price.Symbol
+				select new {Symbol = position.Symbol, Amount = position.Amount, Price = price.Value, MarketValue = position.Amount * price.Value};
+			 
+			 
+			var result = new List<ViewResponse>();
+			foreach(var gr in joinQuery)
+			{				
+				var rowResponse = new ViewResponse();
+				var values = new Dictionary<string, string>();
+			  	rowResponse.Id =  gr.Symbol;
+			  	rowResponse.Amount = gr.Amount;
+			  	rowResponse.Price = gr.Price;
+			  	rowResponse.MarketValue = gr.MarketValue;
+			  	result.Add(rowResponse);
+			}
+			return result;
+		}
+		
+		public IEnumerable<ViewResponse> GetBySecView()
 		{
 			var joinQuery = from position in _positionCache.GetAll()
 				join price in _priceCache.GetAll() on position.Symbol equals price.Symbol

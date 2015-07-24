@@ -31,13 +31,13 @@ namespace Tick.Hubs
                     while (true)
                     {
                         Thread.Sleep(1000);
-                        Clients.All.updateStockPrice(_viewRepo.GetPositionView());                        
+                        Clients.All.updateStockPrice(_viewRepo.GetBySecView());                        
                     }
                 }
         		
         	public IEnumerable<ViewResponse> GetAllStocks()
                 {
-                    return _viewRepo.GetPositionView();
+                    return _viewRepo.GetBySecView();
                 }
 	}
 }
