@@ -11,10 +11,10 @@ public class Startup
     {
         app.UseMvc();
         app.UseFileServer();        
-         app.UseSignalR();
-         app.Run(async (context) =>
+        app.UseSignalR();
+        app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!!.\nThis is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma\nEze Software Group");
+                await context.Response.WriteAsync("Hello World!.\nThis is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma\nEze Software Group");
                 
             });
     }
