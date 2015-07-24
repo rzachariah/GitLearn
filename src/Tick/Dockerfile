@@ -2,6 +2,6 @@ FROM microsoft/aspnet
 
 COPY . /app
 
-WORKDIR /app
+WORKDIR /app/approot/src/Tick
 
-ENTRYPOINT ["bash", "kestrel"]
+ENTRYPOINT ["dnx", ".", "kestrel"]
