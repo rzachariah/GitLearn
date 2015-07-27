@@ -14,7 +14,7 @@ public class Startup
         app.UseSignalR();
         app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!.\nThis is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma\nEze Software Group");
+                await context.Response.WriteAsync("Hello World!.\nThis is my first demo. This is a ASP.NET vNext test Application on Docker.\n\nMaintained by Ashish Sharma\nEze Software Group");
                 
             });
     }
