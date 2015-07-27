@@ -36,7 +36,7 @@ namespace Tick.Cache
 	
 	public class SymbolCache : ISymbolCache
 	{
-		private List<string> _symbols = new List<string>(){"IBM", "GOOG", "AAPL", "MSFT", "HP", "FB"};
+		private List<string> _symbols = new List<string>(){ "IBM", "CSCO", "MSFT", "AAPL", "EZE", "FB" };
 		private readonly Random _random = new Random();
 		public string GetNext()
 		{

@@ -7,6 +7,7 @@ using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using Tick.Repository;
 using Tick.Response;
+using Tick.Rx;
 
 namespace Tick.Hubs
 {
@@ -14,10 +15,13 @@ namespace Tick.Hubs
         public class ViewHub : Hub
 	{
                 private readonly IViewRepository _viewRepo;
+                private readonly StreamProvider _streamProvider;
         	public ViewHub(IViewRepository viewRepository)
         	{
                         _viewRepo = viewRepository;
-        		 Task.Factory.StartNew(Publish);
+                        //Task.Factory.StartNew(Publish);
+                        _streamProvider = new StreamProvider(this);
+                        _streamProvider.Initialize();
         	}
                 
                 public override Task OnConnected()
@@ -38,6 +42,11 @@ namespace Tick.Hubs
         	public IEnumerable<ViewResponse> GetAllStocks()
                 {
                     return _viewRepo.GetBySecView();
+                }
+                
+                public void Notify(ViewResponse response)
+                {
+                        Clients.All.updateStockPrice(new []{response});
                 }
 	}
 }
