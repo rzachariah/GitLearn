@@ -25,7 +25,9 @@ public class Startup
          services.AddSignalR(options =>
             {
                 options.Hubs.EnableDetailedErrors = true;
+                options.Transports.TransportConnectTimeout = TimeSpan.FromSeconds(50);
             });
+          
         services.AddSingleton<ISymbolCache, SymbolCache>();
         services.AddSingleton<IPositionCache, PositionCache>();
         services.AddSingleton<IPriceCache, PriceCache>();
