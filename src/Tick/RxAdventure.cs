@@ -52,7 +52,7 @@ namespace Tick.Rx
 
     public static class SecurityMaster
     {
-        private static string[] universe = new string[] { "IBM", "CSCO", "MSFT", "AAPL", "EZE", "FB" };
+        private static string[] universe = new string[] { "IBM", "CSCO", "MSFT", "AAPL", "EZE", "FB", "HP", "HD", "EC", "NDS" };
 
         public static IList<string> SymbolList
         {
