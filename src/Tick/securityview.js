@@ -20,25 +20,23 @@ $(function () {
     function init() {
         ticker.server.getAllStocks().done(function (stocks) {
             $stockTableBody.empty();
-            $.each(stocks, function () {
-                $stockTableBody.append(rowTemplate.supplant(this));
-            });
         });
     }
 
     // Add a client-side hub method that the server will call
     ticker.client.updateStockPrice = function (stocks) {
         $.each(stocks, function () {
-            $row = $(rowTemplate.supplant(this));
+			$row = $(rowTemplate.supplant(this));
 
-            $stockTableBody.find('tr[data-Id=' + this.Id + ']')
-            .replaceWith($row);
-        });
+			var row = $stockTableBody.find('tr[data-Id=' + this.Id + ']');
+			if (row.length == 0)
+				$stockTableBody.append(rowTemplate.supplant(this));
+			else
+				row.replaceWith($row);
+		});
         }
 
     // Start the connection
-    $.connection.hub.transportConnectTimeout = 50000;
     $.connection.hub.logging = true;
     $.connection.hub.start({ transport: activeTransport, jsonp: isJsonp }).done(init);
-
 });
