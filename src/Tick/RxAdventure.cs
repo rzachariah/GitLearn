@@ -25,7 +25,7 @@ namespace Tick.Rx
                            .Publish()
                            .RefCount();
 
-            var trades = Observable.Interval(TimeSpan.FromMilliseconds(700))
+            var trades = Observable.Interval(TimeSpan.FromMilliseconds(3000))
                                    .Select(_ => Trade.CreateNext())
                                    .Publish()
                                    .RefCount();
