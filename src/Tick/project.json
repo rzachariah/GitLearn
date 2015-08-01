@@ -1,14 +1,14 @@
 ﻿{
   "version": "1.0.0-*",
   "dependencies": {
-    "Kestrel": "1.0.0-beta5",
-        "Microsoft.AspNet.Diagnostics": "1.0.0-beta5",
-        "Microsoft.AspNet.Hosting": "1.0.0-beta5",
-        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta5",
-        "Microsoft.AspNet.StaticFiles": "1.0.0-beta5",
-        "Microsoft.AspNet.Mvc": "6.0.0-beta5",
+    "Kestrel": "1.0.0-beta6",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta6",
+        "Microsoft.AspNet.Hosting": "1.0.0-beta6",
+        "Microsoft.AspNet.Server.WebListener": "1.0.0-beta6",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta6",
+        "Microsoft.AspNet.Mvc": "6.0.0-beta6",
         "DotNetEx.Reactive": "1.0.7",
-        "Microsoft.AspNet.SignalR.Server": "3.0.0-beta5"
+        "Microsoft.AspNet.SignalR.Server": "3.0.0-beta6"
   },
 
   "commands": {

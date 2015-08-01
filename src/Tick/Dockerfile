@@ -11,7 +11,7 @@ RUN echo "deb http://download.mono-project.com/repo/debian wheezy/snapshots/4.0.
 	&& apt-get install -y mono-devel ca-certificates-mono fsharp mono-vbnc nuget \
 	&& rm -rf /var/lib/apt/lists/*
 	
-ENV DNX_VERSION 1.0.0-beta5
+ENV DNX_VERSION 1.0.0-beta6
 ENV DNX_USER_HOME /opt/dnx
 
 RUN apt-get -qq update && apt-get -qqy install unzip
