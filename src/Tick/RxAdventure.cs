@@ -94,7 +94,7 @@ namespace Tick.Rx
 
         public static Trade CreateNext()
         {
-            return new Trade(SecurityMaster.SymbolList[rand.Next(0, SecurityMaster.SymbolList.Count())], rand.Next(1, 100) * 7);
+            return new Trade(SecurityMaster.SymbolList[rand.Next(0, SecurityMaster.SymbolList.Count())], rand.Next(1, 5) * 3);
         }
     }
 
